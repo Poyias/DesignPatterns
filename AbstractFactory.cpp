@@ -45,7 +45,7 @@ class BMWDoorHandle_Product : public DoorHandle_AbstractProduct
 public:
 	void printSerialNumber (){
 		std::cout << " DoorHandle_Product: BMW123 \n";
-       }
+	}
 };
  
 class FordDoorHandle_Product : public DoorHandle_AbstractProduct 
@@ -53,7 +53,7 @@ class FordDoorHandle_Product : public DoorHandle_AbstractProduct
 public:
 	void printSerialNumber (){
 		std::cout << " DoorHandle_Product: Ford123 \n";
-       }
+	}
 };
 
 class BMWDoorWindow_Product : public DoorWindow_AbstractProduct 
@@ -61,7 +61,7 @@ class BMWDoorWindow_Product : public DoorWindow_AbstractProduct
 public:
 	void printSerialNumber (){
 		std::cout << " DoorWindow_Product: BMW456 \n";
-       }
+	}
 };
  
 class FordDoorWindow_Product : public DoorWindow_AbstractProduct {
@@ -69,7 +69,7 @@ public:
 
 	void printSerialNumber (){
 		std::cout << " DoorWindow_Product: Ford456 \n";
-       }
+	}
 };
 
 
