@@ -1,32 +1,43 @@
 #include <iostream>
 using namespace std;
-class Pope_Singleton
+
+class Singleton
 {
+private:
+    static Singleton* s_instance;
+    Singleton(){}
 public:
-	static Pope_Singleton *getInstance();
-	private:
-	Pope_Singleton(){}
-	static Pope_Singleton* instance;
+	// static and public function
+    static Singleton *getInstance();
 };
 
-Pope_Singleton* Pope_Singleton::instance = 0;
 
-Pope_Singleton* Pope_Singleton::getInstance()
+Singleton* Singleton::s_instance = 0;
+// This static class instantiate the Singleton class if the instance does not exist.
+// If the instance exists it does something else.
+Singleton* Singleton::getInstance()
 {
-	if(!instance) {
-		instance = new Pope_Singleton();
-		cout << "getInstance(): Pope instance created\n";
-		return instance;
-	}
-	else 
-	{
-		cout << "getInstance(): Hey this is the same Pope!\n";
-		return instance;
-	}
+    if(!s_instance) {
+        s_instance = new Singleton();
+        std::cout << "There is no instance so we created one.\n";
+        return s_instance;
+    }else{
+        std::cout << "Hey this is the same instance!\n";
+      return s_instance;
+    }
 }
+
+// Main operates as the client.
+// We call the getInstance twice, only the first time the instance is created.
+// then is being used differently.
 int main()
 {
-	Pope_Singleton *s1 = Pope_Singleton::getInstance();
-	Pope_Singleton *s2 = Pope_Singleton::getInstance();
+	Singleton *singlA = Singleton::getInstance();
+	Singleton *singlB = Singleton::getInstance();
 	return 0;
 }
+
+// Output
+// There is no instance so we created one.
+// Hey this is the same instance!
+ 
