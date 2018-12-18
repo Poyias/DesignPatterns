@@ -1,5 +1,9 @@
 #include <iostream>
 using namespace std;
+
+/*
+ * @brief Subsystem1 and 2 below are to be used by the Facade.
+*/
 class Waiter_Subsystem1
 {
 public:
@@ -14,6 +18,10 @@ public:
     void callWaiter() { cout << " Call Waiter\n";}
     void washDishes() { cout << " Wash the dishes\n";}
 };
+
+/*
+ * @brief Facade is using the above subsystems to simplify it for the client
+*/
 class Order_Facade
 {
 private:
@@ -31,6 +39,10 @@ public:
         kitchen.washDishes();
     }
 };
+
+/*
+ * @brief main operates as a client
+*/
 int main(int argc, char *argv[])
 {
     // Simple for the client 
@@ -40,6 +52,7 @@ int main(int argc, char *argv[])
     facade.orderFood();
 return 0;
 }
+
 // Output
 // A series of interdependent calls on various subsystems:
 //  Waiter writes client's order
